@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  background-color: red;
+  height: 70vh;
+  /* width: 600px; */
+  display: grid;
+  /* grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px; */
+
+  /* grid-template-columns: repeat(3, 1fr); Specify The Number of Columns
+  grid-template-rows: repeat(4, 1fr); Specify the number of rows  */
+
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 60px 1fr 60px;
+
+  row-gap: 15px;
+  column-gap: 15px;
+  justify-items: start; /*justify-items work on grid containers [HORIZONTAL ALIGNMENT ]*/
+  align-items: flex-end; /*align-items work on grid containers [VERTICAL ALIGNMENT ]*/
+}
+.item {
+  background-color: rgb(129, 166, 209);
+  /* height: 80px; */
+  width: 100px;
+}
+.item1 {
+  /* grid-column-start: 1; Specify the starting line number of the Grid Area Item
+  grid-column-end: 4; Specify the ending line number of the Grid Area Item */
+
+  grid-column: 1 / span 3; /*Similar to above but we speciy starting and ending columns*/
+  background-color: darkseagreen;
+  width: 100vw;
+  height: 50px;
+}
+.item2 {
+  justify-self: center; /*justify-self work on grid-item */
+  align-self: center; /*align-self work on grid-item*/
+  animation: rotate 3s linear infinite;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.footer {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  background-color: darkseagreen;
+  width: 100vw;
+  height: 50px;
+}
